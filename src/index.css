@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.estatico ul {
+ display: flex;
+  flex-wrap: wrap;
+  height: 90px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #c1f8ca;
+  height: 45px;
+  width: 100%;
+  z-index: 1;
+  justify-content: space-evenly;
+  list-style: none;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
