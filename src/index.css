@@ -13,7 +13,7 @@ code {
 }
 
 .estatico ul {
- display: flex;
+  display: flex;
   flex-wrap: wrap;
   height: 90px;
   position: fixed;
@@ -26,6 +26,26 @@ code {
   justify-content: space-evenly;
   list-style: none;
   align-items: center;
-  flex-wrap: wrap;
+  
+
+}
+
+.greeting {
+ 
+  padding-top: 50px;
+}
+
+img{
+  border-radius: 10px;
+
+}
+
+.cartWidget{
+  height: 40px;
+  width: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
 }
