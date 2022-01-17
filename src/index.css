@@ -31,21 +31,14 @@ code {
 }
 
 .greeting {
- 
   padding-top: 50px;
-}
-
-img{
-  border-radius: 10px;
-
 }
 
 .cartWidget{
   height: 40px;
-  width: 60px;
+  width: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
 }
