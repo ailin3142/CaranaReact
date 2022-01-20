@@ -1,9 +1,9 @@
 import {useState} from "react"
 
 export default function ItemCount({stock, cantidadInicial}) {
-    let [cantidadActual, setCantidadActual] = useState(cantidadInicial)
-    let funcionDisminuir = () => {setCantidadActual(cantidadActual > cantidadInicial ? cantidadActual-1 : cantidadInicial)}
-    let funcionIncrementar = () => {setCantidadActual(cantidadActual < stock ? cantidadActual+1 : stock)}
+    const [cantidadActual, setCantidadActual] = useState(cantidadInicial)
+    const funcionDisminuir = () => {setCantidadActual(cantidadActual > cantidadInicial ? cantidadActual-1 : cantidadInicial)}
+    const funcionIncrementar = () => {setCantidadActual(cantidadActual < stock ? cantidadActual+1 : stock)}
     return(
         <>
             <div class="itemCountContainer">
