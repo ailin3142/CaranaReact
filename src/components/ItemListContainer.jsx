@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react/cjs/react.development"
+import React, { useState, useEffect } from "react"
 import ItemCount from "./ItemCount"
 import ItemList from "./ItemList"
 
 export default function ItemListContainer({greeting}) {
-    const [llegoPromesaItems, setLlegoPromesaItems] = useState(false);
     const [items, setItems] = useState([]);
 
     const productosEnStock = new Promise((resolve, reject) => {
@@ -16,7 +15,6 @@ export default function ItemListContainer({greeting}) {
     
     useEffect( () => {
         productosEnStock.then ( res => {
-            setLlegoPromesaItems(true);
             setItems(res);
         })
         .catch( error => {
@@ -28,8 +26,7 @@ export default function ItemListContainer({greeting}) {
         <>
             <div class="greeting">
                 <h1>{greeting}</h1>
-                <ItemCount stock={4} cantidadInicial={1}/>
-                {llegoPromesaItems ?
+                {items.length > 0 ?
                     <ItemList items={items}/>
                     :
                     <div>Cargando Productos...</div>

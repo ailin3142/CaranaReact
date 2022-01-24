@@ -1,4 +1,5 @@
 import CartWidget from "./CartWidget"
+import React from "react"
 
 export default function NavBar() {
     const secciones = ["Inicio", "Productos", "Contacto", "Clientes", "Puntos de Entrega"]
