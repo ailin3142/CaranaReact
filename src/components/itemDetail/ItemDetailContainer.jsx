@@ -21,8 +21,8 @@ export default function ItemDetailContainer() {
     
     useEffect( () => {
         getItem.then ( res => {
-            setLlegoPromesa(true);
             setItem(res);
+            setLlegoPromesa(true);
         })
         .catch( error => {
             console.log(error);
@@ -34,7 +34,7 @@ export default function ItemDetailContainer() {
             {llegoPromesa ?
                 <ItemDetail detalle={item} />
                 :
-                <div>Cargando detalle del producto...</div>
+                <div class="cargando">Cargando detalle del producto...</div>
             }
         </>
     )

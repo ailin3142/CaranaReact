@@ -69,3 +69,23 @@ ul{
   list-style: none;
 }
 
+.cargando{
+  padding-top: 70px
+}
+
+.producto{
+  padding-top: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content:initial;
+}
+
+.detalleProducto{
+  padding-top: 70px;
+  padding-left: 70px;
+}
+
+.mensaje{
+  padding-left: 270px;
+  padding-top: 20px;
+}

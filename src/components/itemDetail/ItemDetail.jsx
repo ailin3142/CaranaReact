@@ -3,9 +3,9 @@ import React from "react"
 export default function ItemDetail({detalle}) {
     return (
         <>
-            <div>
-                <img src={detalle.url} alt="item" width={200} height={200} />
-                <div>Producto: {detalle.descripcion}
+            <div class="producto">
+                <img src={detalle.url} alt="item" width={200} height={250} />
+                <div class="detalleProducto">Producto: {detalle.descripcion}
                     <br></br> 
                     Precio: {detalle.precio} 
                     <br></br>
@@ -17,10 +17,14 @@ export default function ItemDetail({detalle}) {
                     <br></br>
                     Con estampados: {detalle.estampada}
                     <br></br>
-                    Colores: {detalle.colores}
+                    <select>
+                         {detalle.colores.map(color => <option>{color}</option>)}
+                    </select>
                 </div>
-                <ItemCount stock={detalle.cantidad} cantidadInicial={1}/>
+               
             </div>
+            <div class="mensaje"><ItemCount stock={detalle.cantidad} cantidadInicial={1}/></div>
+            
         </>
     )
 }
