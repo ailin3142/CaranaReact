@@ -9,10 +9,10 @@ export default function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route exact path="/">
+        <Route exact path='/'>
             <ItemListContainer greeting={'Hola fulano'} />
         </Route>
-        <Route path="/detalle">
+        <Route path='/producto/:id'>
             <ItemDetailContainer />
         </Route>
       </Switch>
