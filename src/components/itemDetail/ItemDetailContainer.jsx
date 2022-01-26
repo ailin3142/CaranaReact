@@ -19,10 +19,7 @@ export default function ItemDetailContainer() {
     
     useEffect( () => {
         getItem.then ( res => {
-            console.log(res);
-            console.log({id});
             const producto = res.find( prod => prod.id === id);
-            console.log(producto);
             setItem(producto);
             setLlegoPromesa(true);
         })
