@@ -10,12 +10,12 @@ export default function App() {
       <NavBar />
       <Switch>
         <Route exact path='/'>
-            <ItemListContainer greeting={'Hola fulano'} />
+            <ItemListContainer greeting={'Lista de productos'} />
         </Route>
-        <Route path='/producto/:id'>
+        <Route exact path='/producto/:id'>
             <ItemDetailContainer />
         </Route>
-        <Route path='/category/:categoryId'>
+        <Route exact path='/category/:categoryId'>
         <ItemListContainer greeting={'Estas en la categoria {categoryId}'} />
         </Route>
       </Switch>
