@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import ItemCount from "./ItemCount"
 import ItemList from "./ItemList"
 
 export default function ItemListContainer({greeting}) {
