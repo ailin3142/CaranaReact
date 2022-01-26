@@ -37,8 +37,8 @@ export default function ItemListContainer({greeting}) {
     })
 
     useEffect( () => {
-        setSaludo(greeting.replace("{categoryId}", categoryId))
-        setItems([])
+        setSaludo(greeting.replace("{categoryId}", categoryId));
+        setItems([]);
     }, [greeting, categoryId])
 
     return(
@@ -48,7 +48,7 @@ export default function ItemListContainer({greeting}) {
                 {items.length > 0 ?
                     <ItemList items={items}/>
                     :
-                    <div>Cargando Productos...</div>
+                    <div class="loader"></div>
                 }
             </div>
         </>
