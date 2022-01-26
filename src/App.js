@@ -1,4 +1,4 @@
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import React from "react"
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
@@ -14,6 +14,9 @@ export default function App() {
         </Route>
         <Route path='/producto/:id'>
             <ItemDetailContainer />
+        </Route>
+        <Route path='/category/:categoryId'>
+        <ItemListContainer greeting={'Estas en la categoria {categoryId}'} />
         </Route>
       </Switch>
     </BrowserRouter>

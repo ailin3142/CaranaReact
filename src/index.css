@@ -41,6 +41,15 @@ code {
   align-items: center;
 }
 
+.navBarItemSeleccionado {
+  color: brown;
+}
+
+.navBarItem {
+  color: black;
+  text-underline-position: unset;
+}
+
 .controles{
   width: 50%;
   display: flex;
