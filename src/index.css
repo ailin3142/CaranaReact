@@ -41,14 +41,31 @@ code {
   align-items: center;
 }
 
+navLink:visited {
+  color: #000000;
+  text-decoration: none;
+}
+
 .navBarItemSeleccionado {
-  color: brown;
+  color: #888888;
+  text-decoration: none;
+}
+
+.navBarItemSeleccionado:visited {
+  color: #000000;
+  text-decoration: none;
 }
 
 .navBarItem {
-  color: black;
-  text-underline-position: unset;
+  color: #000000;
+  text-decoration: none;
 }
+
+.navBarItem:visited{
+  color: #000000;
+  text-decoration: none;
+}
+
 
 .controles{
   width: 50%;
