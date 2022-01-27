@@ -39,12 +39,12 @@ export default function ItemDetailContainer() {
     return (
         <>
             <div class="greeting">
-                <h1>Detalle</h1>
-                {llegoPromesa ?
-                    <ItemDetail detalle={item} />
-                    :
-                    <div class="loader"></div>
-                }
+            <h1>Detalle</h1>
+            {llegoPromesa ?
+                <ItemDetail detalle={item} />
+                :
+                <div class="loader"></div>
+            }
             </div>
         </>
     )

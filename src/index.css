@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -62,9 +67,12 @@ code {
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 20%;
   border: solid;
+  border-color: rgb(90, 84, 90);
+  box-shadow:5px 5px 5px burlywood;
 	border-radius: 10px;
 	padding: 20px;
 	margin-bottom: 50px;
@@ -76,10 +84,19 @@ ul{
 }
 
 .producto{
+  width: 600px;
+  margin-left: 400px;
   padding-top: 70px;
   display: flex;
   flex-direction: row;
-  justify-content:initial;
+  justify-content: center;
+  border: solid;
+  border-color: rgb(90, 84, 90);
+  box-shadow:5px 5px 5px burlywood;
+	border-radius: 10px;
+	padding: 20px;
+	
+  
 }
 
 .detalleProducto{
@@ -88,8 +105,8 @@ ul{
 }
 
 .loader {
-  padding-top: 120px;
-  padding-left: 120px;
+  padding-top: 70px;
+  padding-left: 70px;
   border: 16px solid #f3f3f3;
   border-top: 16px solid #3498db;
   border-radius: 50%;
