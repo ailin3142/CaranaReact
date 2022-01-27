@@ -7,7 +7,7 @@ export default function ItemListContainer({greeting}) {
     const {categoryId} = useParams()
     const [saludo, setSaludo] = useState(greeting)
 
-    let productos = [
+    const productos = [
         {id:'1', title:'Bolsa de friselina reforzada', categoria:'bolsa', price: 100, cantidad: 20, pictureUrl: 'https://http2.mlstatic.com/D_NQ_NP_839144-MLA45058582893_032021-O.webp'},
         {id:'2', title:'Bolsa de friselina', categoria:'bolsa', price: 100, cantidad: 20, pictureUrl: 'https://http2.mlstatic.com/D_NQ_NP_839144-MLA45058582893_032021-O.webp'},
         {id:'3', title:'Bolson', categoria:'bolsa', price: 100, cantidad: 20, pictureUrl: 'https://http2.mlstatic.com/D_NQ_NP_839144-MLA45058582893_032021-O.webp'},
@@ -22,23 +22,22 @@ export default function ItemListContainer({greeting}) {
     const productosEnStock = new Promise((resolve, reject) => {
         setTimeout( () => {
             if (categoryId) {
-                productos = productos.filter( prod => prod.categoria === categoryId)
+                resolve(productos.filter( prod => prod.categoria === categoryId));
+            } else {
+                resolve(productos);
             }
-            resolve(productos)}, 2000)
+           }, 2000)
     });
-    
+
     useEffect( () => {
+        setItems([]);
+        setSaludo(greeting.replace("{categoryId}", categoryId));
         productosEnStock.then ( res => {
             setItems(res);
         })
         .catch( error => {
             console.log(error);
         })
-    })
-
-    useEffect( () => {
-        setSaludo(greeting.replace("{categoryId}", categoryId));
-        setItems([]);
     }, [greeting, categoryId])
 
     return(
