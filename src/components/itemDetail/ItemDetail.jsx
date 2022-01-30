@@ -1,9 +1,11 @@
 import ItemCount from "./ItemCount"
-import React from "react"
+import React, {useState} from "react"
 export default function ItemDetail({detalle}) {
     const onAdd = cantidad => {
+        setCantidadPedida(cantidad);
         alert("Se agregan " + cantidad + " al carrito de " + detalle.descripcion);
-      };
+    };
+    const [cantidadPedida, setCantidadPedida] = useState(0);
 
     return (
         <>
@@ -17,7 +19,11 @@ export default function ItemDetail({detalle}) {
                     <li>Con tiras: {detalle.tiras}</li>
                     <li>Con estampados: {detalle.estampada}</li>
                     <li><select> {detalle.colores.map(color => <option>{color}</option>)}</select></li>
+                    {cantidadPedida === 0 ?
                     <li><ItemCount stock={detalle.cantidad} cantidadInicial={1} onAdd={onAdd}/></li>
+                    :
+                    <div></div>
+                }
                 </ul>
             </div>            
         </>
