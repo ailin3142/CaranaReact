@@ -4,15 +4,16 @@ import { Link } from "react-router-dom"
 import { contexto } from "../cart/CartContext";
 
 export default function ItemDetail({ detalle }) {
+    const [cantidadPedida, setCantidadPedida] = useState(0);
+    const [stockActual, setStockActual] = useState(detalle.cantidad)
+    const { addItem } = useContext(contexto);
+
     const onAdd = cantidad => {
         setCantidadPedida(cantidad);
         alert("Se agregan " + cantidad + " al carrito de " + detalle.descripcion);
         setStockActual(stockActual - cantidad);
         addItem(detalle, cantidad);
     };
-    const [cantidadPedida, setCantidadPedida] = useState(0);
-    const [stockActual, setStockActual] = useState(detalle.cantidad)
-    const { addItem } = useContext(contexto);
 
     return (
         <>

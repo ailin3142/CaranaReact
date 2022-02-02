@@ -10,8 +10,7 @@ export default function Cart() {
             <ul>
                 {carrito.map(producto =>
                     <li>
-                        <div>
-                            <h1>{producto.descripcion} {producto.cantidad} </h1>
+                        <div className="controles">
                             <button style={{
                                 backgroundImage: "url('https://png.pngitem.com/pimgs/s/200-2009349_transparent-trash-icon-png-trash-icon-png-png.png')",
                                 backgroundPosition: 'center',
@@ -20,6 +19,7 @@ export default function Cart() {
                                 width: 24,
                                 height: 24
                             }} onClick={() => {removeItem(producto.id)}}></button>
+                            <h1>{producto.descripcion} {producto.cantidad} </h1>
                         </div>
                     </li>)}
             </ul>

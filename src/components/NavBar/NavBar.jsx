@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom"
 import { contexto } from "../cart/CartContext"
 
 export default function NavBar() {
+    const { carrito } = useContext(contexto);
+
     const secciones = [
         { "titulo": "Inicio", "path": "/" },
         { "titulo": "Bolsas", "path": "/category/bolsa" },
         { "titulo": "Fundas", "path": "/category/funda" },
         { "titulo": "Mochilas", "path": "/category/mochila" }]
-
-    const { carrito } = useContext(contexto);
     
     return (
         <>
