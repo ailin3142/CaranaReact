@@ -12,12 +12,7 @@ export default function ItemDetail({ detalle }) {
     };
     const [cantidadPedida, setCantidadPedida] = useState(0);
     const [stockActual, setStockActual] = useState(detalle.cantidad)
-    const { addItem, removeItem, clear } = useContext(contexto);
-
-    const onRemove = () => {
-        setCantidadPedida(0);
-        removeItem(detalle.id);
-    };
+    const { addItem } = useContext(contexto);
 
     return (
         <>
@@ -34,11 +29,7 @@ export default function ItemDetail({ detalle }) {
                     {cantidadPedida === 0 ?
                         <li><ItemCount stock={detalle.cantidad} cantidadInicial={1} onAdd={onAdd} /></li>
                         :
-                        <div>
                             <li><Link to={'/cart'}> <button> Finalizar compra </button> </Link></li>
-                            <li><button onClick={onRemove}> Eliminar del carrito </button></li>
-                            <li><button onClick={clear}> Eliminar todo el carrito </button></li>
-                        </div>
                     }
                 </ul>
             </div>
