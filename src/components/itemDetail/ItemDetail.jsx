@@ -1,15 +1,23 @@
 import ItemCount from "./ItemCount"
-import React, {useState} from "react"
+import React, { useState, useContext } from "react"
 import { Link } from "react-router-dom"
+import { contexto } from "../cart/CartContext";
 
-export default function ItemDetail({detalle}) {
+export default function ItemDetail({ detalle }) {
     const onAdd = cantidad => {
         setCantidadPedida(cantidad);
         alert("Se agregan " + cantidad + " al carrito de " + detalle.descripcion);
         setStockActual(stockActual - cantidad);
+        addItem(detalle, cantidad);
     };
     const [cantidadPedida, setCantidadPedida] = useState(0);
     const [stockActual, setStockActual] = useState(detalle.cantidad)
+    const { addItem, removeItem, clear } = useContext(contexto);
+
+    const onRemove = () => {
+        setCantidadPedida(0);
+        removeItem(detalle.id);
+    };
 
     return (
         <>
@@ -24,12 +32,16 @@ export default function ItemDetail({detalle}) {
                     <li>Con estampados: {detalle.estampada}</li>
                     <li><select> {detalle.colores.map(color => <option>{color}</option>)}</select></li>
                     {cantidadPedida === 0 ?
-                    <li><ItemCount stock={detalle.cantidad} cantidadInicial={1} onAdd={onAdd}/></li>
-                    :
-                    <Link to={'/cart'}> <button> Finalizar compra </button> </Link>
-                }
+                        <li><ItemCount stock={detalle.cantidad} cantidadInicial={1} onAdd={onAdd} /></li>
+                        :
+                        <div>
+                            <li><Link to={'/cart'}> <button> Finalizar compra </button> </Link></li>
+                            <li><button onClick={onRemove}> Eliminar del carrito </button></li>
+                            <li><button onClick={clear}> Eliminar todo el carrito </button></li>
+                        </div>
+                    }
                 </ul>
-            </div>            
+            </div>
         </>
     )
 }
