@@ -19,7 +19,7 @@ export default function Cart() {
                                 backgroundRepeat: 'no-repeat',
                                 width: 24,
                                 height: 24
-                            }} onClick={removeItem(producto.id)}></button>
+                            }} onClick={() => {removeItem(producto.id)}}></button>
                         </div>
                     </li>)}
             </ul>
