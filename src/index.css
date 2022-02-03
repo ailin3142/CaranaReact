@@ -50,6 +50,7 @@ code {
   color: #000000;
   text-decoration: none;
 }
+
 .navBarItemSeleccionado {
   color:rgb(31, 9, 160);
   text-decoration: none;
@@ -118,4 +119,9 @@ ul{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+p {
+  color: #000000;
+  text-decoration: none;
 }

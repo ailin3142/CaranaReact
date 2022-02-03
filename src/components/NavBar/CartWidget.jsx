@@ -1,9 +1,10 @@
 import React from "react"
+import { NavLink } from "react-router-dom"
 
 export default function CartWidget({buys}) {
     return(
         <>
-            <div class="cartWidget" onClick= {() => window.open("/cart", "_self")}>
+            <NavLink to={"/cart"}><div class="cartWidget">
                 <div>
                     <img src="../carrito.png" alt="carrito" width={30} height={30} />
                 </div>
@@ -11,6 +12,7 @@ export default function CartWidget({buys}) {
                     <p>{buys}</p>
                 </div>
             </div>
+            </NavLink>
         </>
     )
 }
