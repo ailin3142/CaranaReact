@@ -3,6 +3,7 @@ import { contexto } from "../cart/CartContext";
 
 export default function Cart() {
     const { removeItem, clear, carrito } = useContext(contexto);
+    const result = carrito.reduce(function (acc, obj) { return acc + obj.precio * obj.cantidad; }, 0);
 
     return (
         <div className="greeting">
@@ -18,11 +19,16 @@ export default function Cart() {
                                 backgroundRepeat: 'no-repeat',
                                 width: 24,
                                 height: 24
-                            }} onClick={() => {removeItem(producto.id)}}></button>
-                            <h1>{producto.descripcion} {producto.cantidad} </h1>
+                            }} onClick={() => { removeItem(producto.id) }}></button>
+                            <ul>
+                                <li>{producto.descripcion}</li>
+                                <li>Cantidad: {producto.cantidad}</li>
+                                <li>Precio Unitario{producto.precio}</li>
+                            </ul>
                         </div>
                     </li>)}
             </ul>
+            <h2>Precio Total: {result}</h2>
             <button onClick={clear}> Eliminar todo el carrito </button>
         </div>
     )
