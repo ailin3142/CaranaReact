@@ -12,12 +12,14 @@ export default function NavBar() {
         { "titulo": "Fundas", "path": "/category/funda" },
         { "titulo": "Mochilas", "path": "/category/mochila" }]
 
+    const cantidadProducto = carrito.reduce(function (acc, obj) { return acc + obj.cantidad; }, 0);
+
     return (
         <>
             <div class="estatico">
                 <ul>
                     {secciones.map(seccion => <li><NavLink to={seccion.path} className="navBarItem" exact activeClassName="navBarItemSeleccionado"> {seccion.titulo} </NavLink></li>)}
-                    {carrito.length > 0 ? <CartWidget buys={carrito.length} /> : <></>}
+                    {carrito.length > 0 ? <CartWidget buys={cantidadProducto} /> : <></>}
                 </ul>
             </div>
         </>

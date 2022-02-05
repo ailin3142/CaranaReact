@@ -23,19 +23,20 @@ export default function Cart() {
                 <>
                 <ul>
                     {carrito.map(producto =>
-                        <li>
-                            <div className="controles" style={{width: "25%"}}>
-                                <button style={estiloBoton} onClick={() => { removeItem(producto.id) }}></button>
+                        <li className="itemCart">
+                            <div className="carrito">
+                                
                                 <ul>
                                     <li>Producto: {producto.descripcion}</li>
                                     <li>Cantidad: {producto.cantidad}</li>
                                     <li>Precio Unitario: {producto.precio}</li>
                                 </ul>
+                                <button style={estiloBoton} onClick={() => { removeItem(producto.id) }}></button>
                             </div>
                         </li>)}
                 </ul>
                 <h2>Precio Total: {precioTotal}</h2>
-                <button onClick={clear}> Eliminar todo el carrito </button>
+                <button onClick={clear} className="Button"> Eliminar todo el carrito </button>
                 </>
             :
                 <Link to="/"> Ir al catalogo</Link>
