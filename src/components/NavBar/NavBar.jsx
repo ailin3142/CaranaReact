@@ -17,11 +17,7 @@ export default function NavBar() {
             <div class="estatico">
                 <ul>
                     {secciones.map(seccion => <li><NavLink to={seccion.path} className="navBarItem" exact activeClassName="navBarItemSeleccionado"> {seccion.titulo} </NavLink></li>)}
-                    {carrito.length > 0 ?
-                    <CartWidget buys={carrito.length} />
-                    :
-                    <></>
-                    }
+                    {carrito.length > 0 ? <CartWidget buys={carrito.length} /> : <></>}
                 </ul>
             </div>
         </>
