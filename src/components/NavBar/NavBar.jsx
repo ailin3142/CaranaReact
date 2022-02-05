@@ -11,13 +11,17 @@ export default function NavBar() {
         { "titulo": "Bolsas", "path": "/category/bolsa" },
         { "titulo": "Fundas", "path": "/category/funda" },
         { "titulo": "Mochilas", "path": "/category/mochila" }]
-    
+
     return (
         <>
             <div class="estatico">
                 <ul>
                     {secciones.map(seccion => <li><NavLink to={seccion.path} className="navBarItem" exact activeClassName="navBarItemSeleccionado"> {seccion.titulo} </NavLink></li>)}
+                    {carrito.length > 0 ?
                     <CartWidget buys={carrito.length} />
+                    :
+                    <></>
+                    }
                 </ul>
             </div>
         </>
