@@ -30,7 +30,7 @@ export default function ItemDetail({ detalle }) {
                     {cantidadPedida === 0 ?
                         <li><ItemCount stock={detalle.cantidad} cantidadInicial={1} onAdd={onAdd} /></li>
                         :
-                            <li><Link to={'/cart'}> <button> Finalizar compra </button> </Link></li>
+                            <li><Link to={'/cart'}> <button> Terminar mi compra </button> </Link></li>
                     }
                 </ul>
             </div>
