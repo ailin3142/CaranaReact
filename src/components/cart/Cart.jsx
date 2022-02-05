@@ -24,12 +24,12 @@ export default function Cart() {
                 <ul>
                     {carrito.map(producto =>
                         <li>
-                            <div className="controles">
+                            <div className="controles" style={{width: "25%"}}>
                                 <button style={estiloBoton} onClick={() => { removeItem(producto.id) }}></button>
                                 <ul>
-                                    <li>{producto.descripcion}</li>
+                                    <li>Producto: {producto.descripcion}</li>
                                     <li>Cantidad: {producto.cantidad}</li>
-                                    <li>Precio Unitario{producto.precio}</li>
+                                    <li>Precio Unitario: {producto.precio}</li>
                                 </ul>
                             </div>
                         </li>)}
