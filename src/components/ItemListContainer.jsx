@@ -43,12 +43,12 @@ export default function ItemListContainer({ greeting }) {
 
     return (
         <>
-            <div class="greeting">
+            <div className="greeting">
                 <h1>{saludo}</h1>
                 {!isLoading ?
                     <ItemList items={items} />
                     :
-                    <div class="loader"></div>
+                    <div className="loader"></div>
                 }
             </div>
         </>

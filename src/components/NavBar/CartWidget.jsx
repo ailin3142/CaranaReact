@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 export default function CartWidget({buys}) {
     return(
         <>
-            <NavLink to={"/cart"}><div class="cartWidget">
+            <NavLink to={"/cart"}><div className="cartWidget">
                 <div>
                     <img src="../carrito.png" alt="carrito" width={30} height={30} />
                 </div>

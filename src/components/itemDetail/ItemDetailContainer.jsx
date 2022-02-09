@@ -30,12 +30,12 @@ export default function ItemDetailContainer() {
 
     return (
         <>
-            <div class="greeting"></div>
+            <div className="greeting"></div>
             <h1>Detalle</h1>
             {llegoPromesa ?
                 <ItemDetail detalle={item} />
                 :
-                <div class="loader" />
+                <div className="loader" />
             }
         </>
     )

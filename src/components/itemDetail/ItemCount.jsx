@@ -10,8 +10,8 @@ export default function ItemCount({stock, cantidadInicial, onAdd}) {
     
     return(
         <>
-            <div class="itemCountContainer">
-                <div class="controles">
+            <div className="itemCountContainer">
+                <div className="controles">
                     <button type="button" onClick={funcionDisminuir}>-</button>
                     <p>{cantidadActual}</p>
                     <button type="button" onClick={funcionIncrementar}>+</button>

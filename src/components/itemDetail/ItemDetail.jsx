@@ -15,9 +15,14 @@ export default function ItemDetail({ detalle }) {
         addItem(detalle, cantidad);
     };
 
+    const colores = detalle.colores.map((color) => {
+        return (
+            <option key={color}> color</option>
+        );
+    });
     return (
         <>
-            <div class="producto">
+            <div className="producto">
                 <img src={detalle.url} alt="item" width={200} height={250} />
                 <ul>
                     <li>Producto: {detalle.descripcion}</li>
@@ -26,7 +31,7 @@ export default function ItemDetail({ detalle }) {
                     <li>Medidas: {detalle.medida}</li>
                     <li>Con tiras: {detalle.tiras}</li>
                     <li>Con estampados: {detalle.estampada}</li>
-                    <li><select> {detalle.colores.map(color => <option>{color}</option>)}</select></li>
+                    <li><select> {colores}</select></li>
                     {cantidadPedida === 0 ?
                         <li><ItemCount stock={detalle.cantidad} cantidadInicial={1} onAdd={onAdd} /></li>
                         :

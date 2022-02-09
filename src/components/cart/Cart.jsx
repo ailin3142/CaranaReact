@@ -23,7 +23,7 @@ export default function Cart() {
                 <>
                 <ul>
                     {carrito.map(producto =>
-                        <li className="itemCart">
+                        <li className="itemCart" key={producto.id}>
                             <div className="carrito">
                                 
                                 <ul>
