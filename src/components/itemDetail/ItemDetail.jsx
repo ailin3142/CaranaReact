@@ -10,14 +10,13 @@ export default function ItemDetail({ detalle }) {
 
     const onAdd = cantidad => {
         setCantidadPedida(cantidad);
-        alert("Se agregan " + cantidad + " al carrito de " + detalle.descripcion);
         setStockActual(stockActual - cantidad);
         addItem(detalle, cantidad);
     };
 
     const colores = detalle.colores.map((color) => {
         return (
-            <option key={color}> color</option>
+            <option key={color}> {color}</option>
         );
     });
     return (
