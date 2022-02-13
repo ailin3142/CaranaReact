@@ -7,7 +7,7 @@ export default function Modal({ handleClose, show }) {
     const campos = [{ titulo: "Nombre y Apellido", ref: nombreRef },
                     { titulo: "Telefono", ref: telRef },
                     { titulo: "Email", ref: emailRef }];
-    // revisar uso                
+
     const showHideClassName = show ? "modal display-block" : "modal display-none";
 
     const inputs = campos.map(function (item) {
@@ -15,7 +15,7 @@ export default function Modal({ handleClose, show }) {
             <ul key={item.titulo}>
                 <li>
                     <span>{item.titulo}</span>
-                    <input type="text" ref={item.ref} placeholder={item.titulo}/>
+                    <input type="text" ref={item.ref} placeholder={item.titulo} />
                     <br />
                 </li>
             </ul>
@@ -32,7 +32,7 @@ export default function Modal({ handleClose, show }) {
 
         handleClose(buyer);
     }
-    
+
     return (
         <div className={showHideClassName}>
             <section className="modal-main">
