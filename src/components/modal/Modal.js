@@ -7,6 +7,7 @@ export default function Modal({ handleClose, show }) {
     const campos = [{ titulo: "Nombre y Apellido", ref: nombreRef },
                     { titulo: "Telefono", ref: telRef },
                     { titulo: "Email", ref: emailRef }];
+    // revisar uso                
     const showHideClassName = show ? "modal display-block" : "modal display-none";
 
     const inputs = campos.map(function (item) {
@@ -22,7 +23,6 @@ export default function Modal({ handleClose, show }) {
     });
 
     const generarComprador = () => {
-
         if (nombreRef.current.value === "" || telRef.current.value === "" || emailRef.current.value === "") { return; }
         const buyer = {
             name: nombreRef.current.value,
@@ -38,7 +38,7 @@ export default function Modal({ handleClose, show }) {
             <section className="modal-main">
                 <h2> Datos del cliente </h2>
                 {inputs}
-                <button type="button" onClick={generarComprador}> Realizar compra </button>
+                <button type="button" onClick={() => generarComprador()}> Realizar compra </button>
             </section>
         </div>
     );
