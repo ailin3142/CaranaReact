@@ -26,7 +26,7 @@ export default function Cart() {
         const orden = {
             buyer: buyer,
             items: carrito,
-            total: 1500,
+            total: precioTotal,
             date: firebase.firestore.Timestamp.fromDate(new Date())
         }
         console.log(orden);
