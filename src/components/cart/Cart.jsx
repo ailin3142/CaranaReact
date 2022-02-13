@@ -2,11 +2,13 @@ import React, { useContext, useState } from "react"
 import { contexto } from "../cart/CartContext";
 import { Link } from "react-router-dom";
 import Modal from "../modal/Modal";
-import firebase from "firebase";
+import firebase from "firebase/app";
+import { getFirestore } from "../../firebase/firebase";
 
 export default function Cart() {
     const { removeItem, clear, carrito } = useContext(contexto);
     const [mostrarModal, setMostrarModal] = useState(false);
+    const [orderId, setOrderId] = useState("");
 
     const precioTotal = carrito.reduce(function (acc, obj) { return acc + obj.precio * obj.cantidad; }, 0);
 
@@ -27,7 +29,21 @@ export default function Cart() {
             total: precioTotal,
             date: firebase.firestore.Timestamp.fromDate(new Date())
         }
-        console.log(orden);
+        almacenarOrden(orden);
+    }
+
+    const almacenarOrden = (orden) => {
+        const db = getFirestore();
+        const orders = db.collection("orders");
+
+        orders.add(orden)
+            .then(({ id }) => {
+                setOrderId(id);
+                clear();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     return (
@@ -59,6 +75,7 @@ export default function Cart() {
                 <Link to="/"> Ir al catalogo</Link>
             }
         </div >
+        {orderId !== "" ? <h3 className="greeting">Felicitaciones su referencia de compra es {orderId}</h3> : <></>}
         </>
     )
 }
