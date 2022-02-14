@@ -22,7 +22,7 @@ export default function ItemDetail({ detalle }) {
     return (
         <>
             <div className="producto">
-                <img src={detalle.url} alt="item" width={200} height={250} />
+                <img className="imagenProducto" src={detalle.url} alt="item" />
                 <ul>
                     <li>Producto: {detalle.descripcion}</li>
                     <li>Precio: {detalle.precio}</li>
