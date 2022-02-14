@@ -2,7 +2,10 @@ import Item from "./Item"
 import React from "react"
 
 export default function ItemList({items}) {
-    return<ul>
-            {items.map(item => <li key={item.id}><Item item={item}/></li> )}
-        </ul>
+    return (
+        <div className="grid">
+            {items.map(item => <Item key={item.id} item={item}/> )}
+        </div>
+        )
+    
 }

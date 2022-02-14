@@ -169,3 +169,17 @@ p {
 .display-none {
   display: none;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 150px);
+  grid-gap: 1rem;
+  flex-flow: row wrap;
+  justify-items: start;
+}
+
+.grid > div {
+  margin: 10px;
+  padding: 20px;
+  width: 150px;
+}
