@@ -12,11 +12,11 @@ export default function ItemCount({stock, cantidadInicial, onAdd}) {
         <>
             <div className="itemCountContainer">
                 <div className="controles">
-                    <button type="button" onClick={funcionDisminuir}>-</button>
+                    <button className="botonOscuro" type="button" onClick={funcionDisminuir}>-</button>
                     <p>{cantidadActual}</p>
-                    <button type="button" onClick={funcionIncrementar}>+</button>
+                    <button className="botonOscuro" type="button" onClick={funcionIncrementar}>+</button>
                 </div>
-                <button type="button" onClick={funcionAgregarCarrito}>agregar al carrito</button>
+                <button className="botonOscuro" type="button" onClick={funcionAgregarCarrito}>Agregar al carrito</button>
             </div>
         </>
     )

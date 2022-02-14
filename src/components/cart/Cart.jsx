@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Modal from "../modal/Modal";
 import firebase from "firebase/app";
 import { getFirestore } from "../../firebase/firebase";
+import Especificacion from "../itemDetail/Especificacion";
 
 export default function Cart() {
     const { removeItem, clear, carrito } = useContext(contexto);
@@ -18,9 +19,10 @@ export default function Cart() {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         width: 24,
-        height: 24
+        height: 24,
+        margin:(0,0,0,10)
     }
-    
+
     const comprar = (buyer) => {
         setMostrarModal(false);
         const orden = {
@@ -48,34 +50,34 @@ export default function Cart() {
 
     return (
         <>
-        <Modal handleClose={comprar} show={mostrarModal} />
-        <div className="greeting">
-            <h1> Carrito </h1>
-            {carrito.length > 0 ?
-                <>
-                    <ul>
-                        {carrito.map(producto =>
-                            <li className="itemCart" key={producto.id}>
-                                <div className="carrito">
-
-                                    <ul>
-                                        <li>Producto: {producto.descripcion}</li>
-                                        <li>Cantidad: {producto.cantidad}</li>
-                                        <li>Precio Unitario: {producto.precio}</li>
-                                    </ul>
-                                    <button style={estiloBoton} onClick={() => { removeItem(producto.id) }}></button>
-                                </div>
-                            </li>)}
-                    </ul>
-                    <h2>Precio Total: {precioTotal}</h2>
-                    <button onClick={clear} className="Button"> Eliminar todo el carrito </button>
-                    <button onClick={() => setMostrarModal(true)} className="Button"> Comprar productos </button>
-                </>
-                :
-                <Link to="/"> Ir al catalogo</Link>
-            }
-        </div >
-        {orderId !== "" ? <h3 className="greeting">Felicitaciones su referencia de compra es {orderId}</h3> : <></>}
+            <Modal handleClose={comprar} show={mostrarModal} />
+            <div className="greeting">
+                <h1> Carrito </h1>
+                {carrito.length > 0 ?
+                    <>
+                        <ul>
+                            {carrito.map(producto =>
+                                <li className="itemCart" key={producto.id}>
+                                    <div className="carrito">
+                                        <ul>
+                                            <li><Especificacion titulo="Producto:" descripcion={producto.descripcion} /></li>
+                                            <li><Especificacion titulo="Cantidad:" descripcion={producto.cantidad} /></li>
+                                            <li><Especificacion titulo="Precio Unitario:" descripcion={producto.precio} /></li>
+                                        </ul>
+                                        <button style={estiloBoton} onClick={() => { removeItem(producto.id) }}></button>
+                                    </div>
+                                </li>)}
+                        </ul>
+                        <Especificacion titulo="Precio Total:" descripcion={precioTotal} />
+                        <button onClick={clear} className="botonOscuro"> Eliminar todo el carrito </button>
+                        <br />
+                        <button className="botonOscuro" onClick={() => setMostrarModal(true)}> Comprar productos </button>
+                    </>
+                    :
+                    <Link to="/"><button className="botonOscuro"> Ir al catalogo</button></Link>
+                }
+            </div >
+            {orderId !== "" ? <h3 className="greeting">Felicitaciones su referencia de compra es {orderId}</h3> : <></>}
         </>
     )
 }

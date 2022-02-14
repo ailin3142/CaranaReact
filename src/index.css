@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: mintcream;
 }
 
 code {
@@ -86,7 +87,7 @@ ul{
 
 .producto{
   margin: auto;
-  width: 50%;
+  width: 40%;
   padding-top: 70px;
   display: flex;
   flex-direction: row;
@@ -96,28 +97,33 @@ ul{
   box-shadow:5px 5px 5px burlywood;
 	border-radius: 10px;
 	padding: 20px;
+  background-color: white;
 }
 
 .detalleProducto{
-  padding-top: 70px;
-  padding-left: 70px;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 10px;
 }
 
 .imagenProducto{
-  width: 60%;
+  width: 50%;
+  max-width: 200px;
+  max-height: 250px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
-  height: 100%;
+  height: 80%;
 }
 
 .loader {
   padding-top: 70px;
   padding-left: 70px;
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db;
+  border: 16px solid rgb(253, 241, 219);
+  border-top: 16px solid orange;
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -140,7 +146,12 @@ p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  line-height: 20px;
+  border: solid green;
+  border-radius: 15px;
+  border-width: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color:rgb(243, 223, 231);
 }
 
 .itemCart{
@@ -182,7 +193,7 @@ p {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 150px);
+  grid-template-columns: repeat(auto-fit, 200px);
   grid-gap: 1rem;
   flex-flow: row wrap;
   justify-items: start;
@@ -191,5 +202,12 @@ p {
 .grid > div {
   margin: 10px;
   padding: 20px;
-  width: 150px;
+  width: 200px;
+  background-color: white;
+}  
+
+.botonOscuro {
+  background-color: grey;
+  color: white;
+  border-radius: 5px;
 }
