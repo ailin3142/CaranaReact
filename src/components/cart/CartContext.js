@@ -32,9 +32,20 @@ export default function CartContext({ children }) {
         return carrito.find( prod => prod.id === productoId);
     }
 
+    const actualizarStockProductos = (productos) => {
+        productos.map( producto => actualizarStock(producto));
+    }
+
+    const actualizarStock = (producto) => {
+        const item = findProduct(producto.id);
+        if (item !== undefined) {
+            producto.cantidad -= item.cantidad;
+        }
+    }
+
     return (
         <>
-            <contexto.Provider value={{addItem, removeItem, clear, carrito}}>
+            <contexto.Provider value={{addItem, removeItem, clear, carrito, actualizarStockProductos, actualizarStock}}>
                 {children}
             </contexto.Provider> 
 

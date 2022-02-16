@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
 import { getFirestore } from '../firebase/firebase'
+import { contexto } from "./cart/CartContext";
 
 export default function ItemListContainer({ greeting }) {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const { categoryId } = useParams()
     const [saludo, setSaludo] = useState(greeting)
+    const { actualizarStockProductos } = useContext(contexto);
 
     useEffect(() => {
 
@@ -25,17 +27,19 @@ export default function ItemListContainer({ greeting }) {
                     return
                 }
 
-                setItems(querySnapShot.docs.map((doc) => {
+                const itemsActualizar = querySnapShot.docs.map((doc) => {
                     return { id: doc.id, ...doc.data() };
-                }
-                ));
+                })
+
+                actualizarStockProductos(itemsActualizar);
+                setItems(itemsActualizar);
                 setIsLoading(false);
 
             })
             .catch((err) => {
                 console.log(err);
             })
-    }, [greeting, categoryId])
+    }, [greeting, categoryId, actualizarStockProductos])
 
     useEffect(() => {
         setIsLoading(true);
