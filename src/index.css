@@ -175,12 +175,16 @@ p {
 
 .modal-main {
   position:fixed;
-  background: gainsboro ;
-  width: 50%;
-  height: 50%;
+  display: flexbox;
+  background: rgb(140, 140, 235) ;
+  width: 40%;
+  height: 30%;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
+  border: solid black;
+  border-radius: 15px;
+  border-width: 1px;
 }
 
 .display-block {
@@ -210,4 +214,16 @@ p {
   background-color: grey;
   color: white;
   border-radius: 5px;
+}
+
+.botonOscuro.centrar{
+  background-color: grey;
+  color: white;
+  border-radius: 5px;
+}
+
+.centrar {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }

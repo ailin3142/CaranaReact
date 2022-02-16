@@ -16,7 +16,6 @@ export default function Modal({ handleClose, show }) {
                 <li>
                     <span>{item.titulo}</span>
                     <input type="text" ref={item.ref} placeholder={item.titulo} />
-                    <br />
                 </li>
             </ul>
         )
@@ -36,9 +35,11 @@ export default function Modal({ handleClose, show }) {
     return (
         <div className={showHideClassName}>
             <section className="modal-main">
-                <h2> Datos del cliente </h2>
+                <h3 className="centrar" style={{width: 200}}> Datos del cliente </h3>
+                <br />
                 {inputs}
-                <button type="button" onClick={() => generarComprador()}> Realizar compra </button>
+                <br />
+                <button className="botonOscuro centrar" type="button" onClick={() => generarComprador()}> Realizar compra </button>
             </section>
         </div>
     );
