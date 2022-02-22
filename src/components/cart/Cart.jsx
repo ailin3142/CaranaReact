@@ -14,7 +14,7 @@ export default function Cart() {
     const precioTotal = carrito.reduce(function (acc, obj) { return acc + obj.precio * obj.cantidad; }, 0);
 
     const estiloBoton = {
-        backgroundImage: "url('https://png.pngitem.com/pimgs/s/200-2009349_transparent-trash-icon-png-trash-icon-png-png.png')",
+        backgroundImage: "url('https://w7.pngwing.com/pngs/748/768/png-transparent-computer-icons-html-waste-bin-white-rectangle-logo-thumbnail.png')",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
